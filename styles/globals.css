@@ -71,42 +71,8 @@ ul.header-menu li.header-menu-link {
   margin-right: 10px;
 }
 
-.animeplayer {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
 .logo img {
   width: 17px;
-}
-
-.bg-app {
-  background-image: url("https://64.media.tumblr.com/fa0e3dc16f9430ec91beda6d9214f515/5676916248bbf8a5-88/s540x810/61e17af8b66b5f47425f1f7eddfc5120362ab4e3.gifv");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-}
-.bg-appanime {
-  background-image: url("https://c.tenor.com/pFEQ9E63yGwAAAAd/naruto-boruto.gif");
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-}
-
-.bg-appanimemob {
-  background-image: url("https://c.tenor.com/68LnTqKTHh0AAAAd/naruto-naruto-shippuden.gif");
-  background-position: left;
-  background-size: cover;
-  background-attachment: fixed;
-}
-
-.bg-applearn {
-  background-image: url("https://images.pexels.com/photos/7199194/pexels-photo-7199194.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
 }
 
 .bg4040 {

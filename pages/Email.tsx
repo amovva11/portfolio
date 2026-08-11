@@ -5,7 +5,7 @@ import PageScroll from "../Components/ui/PageScroll";
 import { useIsTabletOrMobile } from "../hooks/useIsTabletOrMobile";
 
 const DESCRIPTION =
-  "Contact me for any discussions on cool ideas or projects or gaming. ";
+  "Get in touch about software engineering roles, internships, or projects.";
 const SPINNER = "https://img.icons8.com/ios/50/ffffff/loading-circle.gif";
 const THANK_YOU_GIF = "https://c.tenor.com/mCiM7CmGGI4AAAAC/naruto.gif";
 
@@ -65,10 +65,9 @@ const Email: NextPage = () => {
         Fill in the form to start a conversation
       </p>
       <p className="text-normal text-md font-normal text-gray-400 dark:text-gray-400 mt-2">
-        You can contact me with any questions, suggestions or just to say hi. I
-        am always open to new ideas and collaborations. It can be anything like
-        collaborating on good projects or startups or freelancing or gaming or
-        anything else.
+        Reach out about software engineering roles and internships, or just to
+        talk shop — AI/ML systems, full-stack work, or whatever you happen to be
+        building. I read everything that comes through here.
       </p>
       <p className="text-sm text-red-600 dark:text-gray-400 mt-2">{error}</p>
     </div>

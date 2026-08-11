@@ -92,7 +92,10 @@ const Explorer: React.FC<ExplorerProps> = ({ closeSideMenu }) => {
             <span className="text-gray-400">All Rights Reserved. </span>
           </li>
           <li>
-            <span className="text-gray-400"> Ⓒ Copyright 2023. </span>
+            <span className="text-gray-400">
+              {" "}
+              Ⓒ Copyright {new Date().getFullYear()}.{" "}
+            </span>
           </li>
         </ul>
       )}

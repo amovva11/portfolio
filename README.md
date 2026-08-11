@@ -1,33 +1,52 @@
-# Visual Studio Code Themed Developer Portfolio
+# Abhijay Movva — Portfolio
 
-An Visual Studio Themed Developer Portfolio built using TypeScript, Next.js and Tailwind.
+A VS Code themed developer portfolio built with Next.js, TypeScript, and Tailwind CSS.
 
-Live Link: 
+## Editing content
 
-## Features
+All copy lives in typed data files under `data/` — no content is hardcoded in components.
 
-- Visual Studio Code Theme Portfolio,
-- Projects List and Details Page
-- Skills and experience section
-- Styled using **Tailwind CSS**
-- Written in **TypeScript**
+| File | Drives |
+|---|---|
+| `data/site.ts` | Name, role, domain, contact details, hero cards |
+| `data/experience.ts` | The Experience timeline |
+| `data/skills.ts` | The Skills page, grouped by category |
+| `data/projects.ts` | Project cards, detail pages, **and** their Explorer rows |
+| `data/blogs.ts` | The Blogs page |
+| `data/explorer.ts` | The sidebar file tree and header links |
 
-## Known Issues
+Adding a project to `data/projects.ts` is enough to publish its card, its detail
+page at `/Projects/<n>`, and its row in the sidebar — all three derive from that
+one list.
 
-1. ~Code needs a rewrite
-2. ~Rewrite Mobile View responsiveness code
-
-## Running Locally
-
-1. Install dependencies using npm:
-
-```sh
-npm install
-```
-
-2. Start the development server:
+## Running locally
 
 ```sh
+npm install --legacy-peer-deps
 npm run dev
 ```
 
+`--legacy-peer-deps` is required: `react-custom-scrollbars@4` declares a peer
+dependency on React ≤16 while this project runs React 18.
+
+## Contact form
+
+`/api/sendEmail` posts through AWS SES. Set these in your deploy environment:
+
+```
+AWS_ACCESS_KEY_ID
+AWS_SECRET_ACCESS_KEY
+AWS_REGION
+CONTACT_TO_EMAIL
+CONTACT_FROM_EMAIL
+```
+
+Without them the endpoint still returns 200 and the form reports success, so
+verify delivery before relying on it.
+
+## Credits
+
+The IDE shell design is adapted from Raj Savaliya's
+[VS Code Theme Portfolio](https://github.com/SRX-OSS/VS-Code-Theme-Portfolio)
+(MIT). Content discipline is modelled on
+[Brittany Chiang's v4](https://github.com/bchiang7/v4).

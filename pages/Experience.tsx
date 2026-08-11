@@ -57,13 +57,21 @@ const Experience: NextPage = () => {
                   date={entry.date}
                   iconStyle={ICON_STYLE}
                   icon={
-                    <Image
-                      src={entry.logo}
-                      width="500"
-                      height="500"
-                      className="rounded-full"
-                      alt={entry.logoAlt}
-                    />
+                    entry.logo ? (
+                      <Image
+                        src={entry.logo}
+                        width="500"
+                        height="500"
+                        className="rounded-full"
+                        alt={entry.logoAlt ?? `${entry.company} logo`}
+                      />
+                    ) : (
+                      // No logo on file yet: fall back to the company initial
+                      // rather than a broken image.
+                      <span className="flex items-center justify-center h-full w-full font-bold text-xl">
+                        {entry.company.charAt(0)}
+                      </span>
+                    )
                   }
                 >
                   <h3 className="vertical-timeline-element-title font-bold">
