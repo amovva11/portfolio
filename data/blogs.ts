@@ -1,4 +1,13 @@
-export const blogsdata = () => [
+export interface BlogPost {
+  image: string;
+  title: string;
+  link: string;
+  /** Short category label rendered as a pill on the card. */
+  tag: string;
+}
+
+/** Posts written, co-authored, or recommended. External links only. */
+export const blogs: BlogPost[] = [
   {
     image:
       "https://ayex8storex9.s3.ap-south-1.amazonaws.com/50/b7218890-a053-11eb-bae0-272850e20d51GreenandBlackGamingYouTubeChannelArt35.jpg",

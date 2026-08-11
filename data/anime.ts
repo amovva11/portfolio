@@ -1,4 +1,10 @@
-export const animedata = () => [
+export interface AnimeEntry {
+  img: string;
+  title: string;
+  subtitle: string;
+}
+
+export const anime: AnimeEntry[] = [
   {
     img: "https://steamuserimages-a.akamaihd.net/ugc/910156967348138382/E4A8A3FAA9388A67BD3DC2CCD77216B21280A7A1/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
     title: "Naruto",

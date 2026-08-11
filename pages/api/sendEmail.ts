@@ -1,61 +1,73 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import AWS from "aws-sdk";
 
-type Data = {
-  data: any;
-  error: any;
+interface ContactRequest {
+  name?: string;
+  email?: string;
+  message?: string;
+}
+
+interface ResponseBody {
+  data: boolean;
+  error: string;
+}
+
+const REGION = process.env.AWS_REGION ?? "ap-south-1";
+
+/**
+ * Credentials and addresses come from the environment. The literal fallbacks
+ * are the template's placeholders, kept so a fresh checkout still builds — set
+ * the real values in your deploy environment before enabling the contact form.
+ */
+const SES_CONFIG = {
+  apiVersion: "2010-12-01",
+  accessKeyId: process.env.AWS_ACCESS_KEY_ID ?? "awsAccessKey",
+  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY ?? "awsSecretAccessKey",
+  region: REGION,
 };
-AWS.config.update({ region: "ap-south-1" });
+const TO_ADDRESS = process.env.CONTACT_TO_EMAIL ?? "toemail@tomail.com";
+const FROM_ADDRESS = process.env.CONTACT_FROM_EMAIL ?? "youremail@gmail.com";
 
-export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Data>
-) {
-  var params = {
-    Destination: {
-      CcAddresses: [],
-      // replace below email with email to which you want to receive the message
-      ToAddresses: ["toemail@tomail.com"],
-    },
-    Message: {
-      Body: {
-        Html: {
-          Charset: "UTF-8",
-          Data: `<div>
-            My Name: ${req.body.name}
-          </div><div>
-            My Message: <b>${req.body.message}</b>
-          </div><div>
-            My Email: </i>${req.body.email}</i>
-          </div>`,
-        },
-      },
-      Subject: {
+AWS.config.update({ region: REGION });
+
+const buildEmail = ({ name, email, message }: ContactRequest) => ({
+  Destination: {
+    CcAddresses: [],
+    ToAddresses: [TO_ADDRESS],
+  },
+  Message: {
+    Body: {
+      Html: {
         Charset: "UTF-8",
-        Data: `Hi I am ${req?.body?.name}, from contact page.`,
+        Data: `<div>
+            My Name: ${name}
+          </div><div>
+            My Message: <b>${message}</b>
+          </div><div>
+            My Email: </i>${email}</i>
+          </div>`,
       },
     },
-    Source: "youremail@gmail.com",
-    ReplyToAddresses: [],
-  };
+    Subject: {
+      Charset: "UTF-8",
+      Data: `Hi I am ${name}, from contact page.`,
+    },
+  },
+  Source: FROM_ADDRESS,
+  ReplyToAddresses: [],
+});
 
-  var sendPromise = new AWS.SES({
-    apiVersion: "2010-12-01",
-    // Use env variables for below secret keys
-    accessKeyId: "awsAccessKey",
-    secretAccessKey: "awsSecretAccessKey",
-    region: "ap-south-1",
-  })
-    .sendEmail(params)
-    .promise();
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse<ResponseBody>
+) {
+  try {
+    await new AWS.SES(SES_CONFIG).sendEmail(buildEmail(req.body)).promise();
+  } catch (err) {
+    // Delivery failures are logged but not surfaced: the form reports success
+    // either way, matching the behaviour this endpoint has always had.
+    console.error(err);
+  }
 
-  sendPromise
-    .then(function (data) {
-      console.log(data);
-      res.status(200).json({ data: true, error: "" });
-    })
-    .catch(function (err) {
-      console.error(err, err.stack);
-      res.status(200).json({ data: true, error: "" });
-    });
+  res.status(200).json({ data: true, error: "" });
 }

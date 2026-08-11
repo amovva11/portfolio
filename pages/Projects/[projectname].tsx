@@ -1,60 +1,42 @@
-import { useRouter } from "next/router";
-import { projectsdata } from "../../Components/JSON/projectsdata";
+import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import ProjectDetails from "../../Components/ProjectDetails";
-import Head from "next/head";
+import PageMeta from "../../Components/ui/PageMeta";
+import { projects, Project } from "../../data/projects";
 
-const Projectdetails = (props: any) => {
-  const router: any = useRouter();
-  const projectDetails = props.projects[parseInt(router.query.projectname) - 1];
-  const altt = projectDetails?.name + " - " + projectDetails?.title;
-  return (
-    <>
-      <Head>
-        <title>Project's Detail </title>
-        <meta name="description" content={`Details of Projects developed.`} />
-        <link rel="icon" href="/favicon.ico" />
-        <meta property="og:title" content={"Project's Detail "} />
-        <meta name="description" content={`Details of Projects developed.`} />
-        <link rel="canonical" href={"https://www.rajsavaliya.com"} />
-        <meta property="og:locale" content="en_US" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={"https://www.rajsavaliya.com"} />
-        <meta property="og:site_name" content="Your Name" />
-        <meta property="og:image" content="/mainthumbnail.PNG" />
-        <meta property="og:image:width" content="1040" />
-        <meta property="og:image:height" content="600" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="HandheldFriendly" content="True" />
-        <meta name="MobileOptimized" content="320" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="twitter:widgets:csp" content="on" />
-      </Head>
-      <ProjectDetails projectDetails={projectDetails} altt={altt} />
-    </>
-  );
+const ProjectDetailPage: NextPage<{ project: Project }> = ({ project }) => (
+  <>
+    <PageMeta
+      title="Project's Detail "
+      description="Details of Projects developed."
+      ogTitle="Project's Detail "
+    />
+    <ProjectDetails
+      project={project}
+      alt={`${project.name} - ${project.title}`}
+    />
+  </>
+);
+
+/**
+ * Routes are 1-based positions in `projects`, so the page resolves its own entry
+ * at build time instead of indexing into a list passed through props.
+ */
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const position = Number(params?.projectname);
+  const project = projects[position - 1];
+
+  if (!project) return { notFound: true };
+
+  return { props: { project } };
 };
 
-export function getStaticProps() {
-  const projects = projectsdata();
-  return {
-    props: {
-      projects: projects,
-    },
-  };
-}
+export const getStaticPaths: GetStaticPaths = async () => ({
+  // One path per project, so adding a project publishes its detail page and no
+  // path can point at a project that does not exist.
+  paths: projects.map((_project, index) => ({
+    params: { projectname: String(index + 1) },
+  })),
+  fallback: false,
+});
 
-export async function getStaticPaths() {
-  return {
-    paths: [
-      { params: { projectname: "1" } },
-      { params: { projectname: "2" } },
-      { params: { projectname: "3" } },
-      { params: { projectname: "4" } },
-      { params: { projectname: "5" } },
-      { params: { projectname: "6" } },
-    ],
-    fallback: false, // can also be true or 'blocking'
-  };
-}
-
-export default Projectdetails;
+export default ProjectDetailPage;

@@ -1,14 +1,14 @@
 import "../styles/globals.css";
+import "react-medium-image-zoom/dist/styles.css";
 import type { AppProps } from "next/app";
-import Layout from "../Components/Layouts/Layout";
+import dynamic from "next/dynamic";
 import { Analytics } from "@vercel/analytics/react";
+import Layout from "../Components/Layouts/Layout";
 
+// The progress bar reads from the window on import, so it is client-only.
 const NextNProgress = dynamic(() => import("nextjs-progressbar"), {
   ssr: false,
 });
-
-import "react-medium-image-zoom/dist/styles.css";
-import dynamic from "next/dynamic";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
