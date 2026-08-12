@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 
 /**
@@ -9,8 +10,21 @@ export const MOBILE_BREAKPOINT_PX = 943;
 /**
  * Single source of truth for the responsive breakpoint.
  *
- * Returns `false` during SSR and on the first client render, so markup that
- * branches on it renders its desktop form on the server and swaps after mount.
+ * Reports `false` on the server AND on the first client render, then switches to
+ * the real match after mount. Without the mount gate, `useMediaQuery` evaluates
+ * `matchMedia` during the first client render, so on a phone the client's first
+ * pass renders the mobile tree against server HTML containing the desktop tree —
+ * a hydration mismatch on every page that branches on this.
+ *
+ * The cost is one frame of desktop layout on narrow screens before it corrects.
  */
-export const useIsTabletOrMobile = (): boolean =>
-  useMediaQuery({ query: `(max-width: ${MOBILE_BREAKPOINT_PX}px)` });
+export const useIsTabletOrMobile = (): boolean => {
+  const matches = useMediaQuery({
+    query: `(max-width: ${MOBILE_BREAKPOINT_PX}px)`,
+  });
+  const [hasMounted, setHasMounted] = useState(false);
+
+  useEffect(() => setHasMounted(true), []);
+
+  return hasMounted && matches;
+};

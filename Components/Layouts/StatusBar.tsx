@@ -1,4 +1,14 @@
-import Clock from "react-live-clock";
+import dynamic from "next/dynamic";
+
+/**
+ * The clock is client-only on purpose.
+ *
+ * Server-rendering it bakes the build-time timestamp into the HTML, which never
+ * matches the time the browser hydrates at — React reports that as
+ * "Text content does not match server-rendered HTML". A ticking clock has no
+ * meaningful server-rendered value anyway.
+ */
+const Clock = dynamic(() => import("react-live-clock"), { ssr: false });
 
 const CLOCK_FORMAT = "dddd, MMMM Mo, YYYY, h:mm:ss A";
 

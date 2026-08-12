@@ -66,9 +66,9 @@ const Experience: NextPage = () => {
                         alt={entry.logoAlt ?? `${entry.company} logo`}
                       />
                     ) : (
-                      // No logo on file yet: fall back to the company initial
-                      // rather than a broken image.
-                      <span className="flex items-center justify-center h-full w-full font-bold text-xl">
+                      // No logo on file yet: a centred initial reads as
+                      // deliberate, where a missing image would not.
+                      <span className="flex items-center justify-center h-full w-full font-bold text-2xl tracking-tight text-white">
                         {entry.company.charAt(0)}
                       </span>
                     )
