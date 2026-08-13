@@ -12,7 +12,7 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Abhijay Movva",
-    alternateName: "Pratham",
+    alternateName: "Abhijay",
     url: "https://agrawalpratham.in",
     image: "https://agrawalpratham.in/assets/png/og_img.png",
     jobTitle: "Associate Consultant",
