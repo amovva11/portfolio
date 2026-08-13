@@ -1,11 +1,11 @@
 {
-    "name": "Pratham Agrawa | Full Stack Web Developer",
-    "short_name": "Pratham's Portfolio",
+    "name": "Abhijay Movva | Full Stack Web Developer",
+    "short_name": "Abhijay's Portfolio",
     "start_url": "/",
     "orientation": "portrait",
     "scope": "/",
     "offline_enabled": true,
-    "description": "Portfolio website of Pratham Agrawal, Full Stack Web Developer",
+    "description": "Portfolio website of Abhijay Movva, Full Stack Web Developer",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",

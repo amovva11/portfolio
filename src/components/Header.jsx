@@ -103,7 +103,7 @@ export default function Header() {
           </div>
           <div className="flex flex-col leading-none">
             <span className="font-heading text-base font-bold text-[var(--text-primary)]">
-              Pratham Agrawal
+              Abhijay Movva
             </span>
           </div>
         </Link>

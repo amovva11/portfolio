@@ -46,7 +46,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-10 items-start">
           <div>
             <h2 className="font-heading text-lg sm:text-xl font-bold mb-3 text-[var(--text-primary)]">
-              Pratham Agrawal
+              Abhijay Movva
             </h2>
             <p className="text-[var(--text-secondary)] text-sm sm:text-base leading-relaxed max-w-md">
               Associate Consultant at Infosys, Mumbai.
@@ -78,7 +78,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-10 pt-6 border-t border-[var(--border-color)] text-center text-xs text-[var(--text-secondary)]">
-          © {new Date().getFullYear()} Pratham Agrawal. All rights reserved. Made with Next.js & Tailwind CSS.
+          © {new Date().getFullYear()} Abhijay Movva. All rights reserved. Made with Next.js & Tailwind CSS.
         </div>
       </div>
     </footer>

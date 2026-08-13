@@ -11,7 +11,7 @@ export default function Home() {
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
-    name: "Pratham Agrawal",
+    name: "Abhijay Movva",
     alternateName: "Pratham",
     url: "https://agrawalpratham.in",
     image: "https://agrawalpratham.in/assets/png/og_img.png",
@@ -60,11 +60,11 @@ export default function Home() {
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "Pratham Agrawal | Portfolio",
+    name: "Abhijay Movva | Portfolio",
     url: "https://agrawalpratham.in",
     author: {
       "@type": "Person",
-      name: "Pratham Agrawal",
+      name: "Abhijay Movva",
     },
   };
 
@@ -72,16 +72,16 @@ export default function Home() {
     <div>
       <Head>
         {/* Primary Meta Tags */}
-        <title>Pratham Agrawal | Associate Consultant at Infosys | ServiceNow & AI Engineer</title>
+        <title>Abhijay Movva | Associate Consultant at Infosys | ServiceNow & AI Engineer</title>
         <meta
           name="description"
           content="Associate Consultant at Infosys, Mumbai with 4+ years of experience in full-stack development, cloud technologies, and AI-driven automation. Delivering enterprise-grade ServiceNow solutions across GenAI, Agentic AI, Now Assist Skills, and AI Agent Studio."
         />
         <meta
           name="keywords"
-          content="Pratham Agrawal, Associate Consultant, Infosys, Infosys Mumbai, ServiceNow, GenAI, Agentic AI, Now Assist Skills, AI Agent Studio, Moveworks, Glide APIs, Flow Designer, UI Builder, ITIL, Full Stack Web Developer, Next.js, ReactJS, Node.js, Firebase, GCP, AWS, Cloud Solutions"
+          content="Abhijay Movva, Associate Consultant, Infosys, Infosys Mumbai, ServiceNow, GenAI, Agentic AI, Now Assist Skills, AI Agent Studio, Moveworks, Glide APIs, Flow Designer, UI Builder, ITIL, Full Stack Web Developer, Next.js, ReactJS, Node.js, Firebase, GCP, AWS, Cloud Solutions"
         />
-        <meta name="author" content="Pratham Agrawal" />
+        <meta name="author" content="Abhijay Movva" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 
         {/* Favicons & Manifest */}
@@ -98,13 +98,13 @@ export default function Home() {
         <link rel="canonical" href="https://agrawalpratham.in/" />
 
         {/* OpenGraph / Facebook Meta Tags */}
-        <meta property="og:site_name" content="Pratham Agrawal Portfolio" />
+        <meta property="og:site_name" content="Abhijay Movva Portfolio" />
         <meta property="og:locale" content="en_US" />
         <meta property="og:type" content="profile" />
         <meta property="profile:first_name" content="Pratham" />
         <meta property="profile:last_name" content="Agrawal" />
         <meta property="profile:username" content="agrawalpratham" />
-        <meta property="og:title" content="Pratham Agrawal | Associate Consultant at Infosys" />
+        <meta property="og:title" content="Abhijay Movva | Associate Consultant at Infosys" />
         <meta
           property="og:description"
           content="Associate Consultant at Infosys, Mumbai with 4+ years of experience in full-stack development, cloud technologies, and AI-driven automation. Delivering enterprise-grade ServiceNow solutions across GenAI, Agentic AI, Now Assist Skills, and AI Agent Studio."
@@ -116,7 +116,7 @@ export default function Home() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@agrawal_2002" />
         <meta name="twitter:creator" content="@agrawal_2002" />
-        <meta name="twitter:title" content="Pratham Agrawal | Associate Consultant at Infosys" />
+        <meta name="twitter:title" content="Abhijay Movva | Associate Consultant at Infosys" />
         <meta
           name="twitter:description"
           content="Associate Consultant at Infosys, Mumbai with 4+ years of experience in full-stack development, cloud technologies, and AI-driven automation. Delivering enterprise-grade ServiceNow solutions across GenAI, Agentic AI, Now Assist Skills, and AI Agent Studio."
