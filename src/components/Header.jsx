@@ -1,4 +1,5 @@
 "use client";
+import { RESUME_URL } from "@/data/site";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -145,8 +146,9 @@ export default function Header() {
           </button>
 
           <Link
-            href="https://drive.google.com/file/d/1OVrswJHsqFC_02D2gdEcuPfqEBbmFOj8/view?usp=drive_link"
+            href={RESUME_URL}
             target="_blank"
+            rel="noopener noreferrer"
             className="ml-2 px-4 py-2 text-sm font-semibold rounded-lg btn--theme shadow-md"
           >
             Resume
@@ -213,8 +215,9 @@ export default function Header() {
           ))}
           <div className="h-px bg-[var(--border-color)] my-2" />
           <Link
-            href="https://drive.google.com/file/d/1OVrswJHsqFC_02D2gdEcuPfqEBbmFOj8/view?usp=drive_link"
+            href={RESUME_URL}
             target="_blank"
+            rel="noopener noreferrer"
             className="block px-4 py-3 rounded-xl text-sm font-semibold text-[var(--accent-primary)] hover:bg-[var(--bg-elevated)] transition-all duration-200"
           >
             📄 Resume

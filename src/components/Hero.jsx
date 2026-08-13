@@ -1,3 +1,4 @@
+import { RESUME_URL } from "@/data/site";
 import { sendGAEvent } from "@next/third-parties/google";
 import Image from "next/image";
 import Link from "next/link";
@@ -43,8 +44,9 @@ export default function Hero() {
                 onClick={() => {
                   sendGAEvent({ event: "buttonClicked", value: "Resume" });
                 }}
-                href="https://drive.google.com/file/d/1OVrswJHsqFC_02D2gdEcuPfqEBbmFOj8/view?usp=drive_link"
+                href={RESUME_URL}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="btn btn--bg btn--theme text-sm sm:text-base"
               >
                 View Resume

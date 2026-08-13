@@ -92,7 +92,6 @@ export default function Home() {
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#12151A" />
         <meta name="msapplication-TileColor" content="#12151A" />
         <meta name="theme-color" content="#12151A" />
-        <meta name="google-site-verification" content="xLgsNqKuFWO2leEq61qdWwQyEJutNxKKEZQX2alS95U" />
 
         {/* Canonical Link */}
         <link rel="canonical" href="https://agrawalpratham.in/" />
