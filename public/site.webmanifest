@@ -1,0 +1,24 @@
+{
+    "name": "Pratham Agrawa | Full Stack Web Developer",
+    "short_name": "Pratham's Portfolio",
+    "start_url": "/",
+    "orientation": "portrait",
+    "scope": "/",
+    "offline_enabled": true,
+    "description": "Portfolio website of Pratham Agrawal, Full Stack Web Developer",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#d3f4f7",
+    "background_color": "#d3f4f7",
+    "display": "standalone"
+}
