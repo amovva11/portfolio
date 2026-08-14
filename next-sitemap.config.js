@@ -1,5 +1,5 @@
 module.exports = {
-  siteUrl: "https://agrawalpratham.in",
+  siteUrl: "https://abhijaymovva.vercel.app",
   priority: 1,
   generateRobotsTxt: true, // (optional)
 };

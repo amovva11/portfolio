@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://agrawalpratham.in
+Host: https://abhijaymovva.vercel.app
 
 # Sitemaps
-Sitemap: https://agrawalpratham.in/sitemap.xml
+Sitemap: https://abhijaymovva.vercel.app/sitemap.xml

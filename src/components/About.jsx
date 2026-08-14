@@ -1,35 +1,44 @@
 import { useState } from "react";
 import { Fade, Slide } from "react-awesome-reveal";
 
+// All icons come from the same devicon CDN so they render consistently.
+const icon = (path) =>
+  `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${path}.svg`;
+
 const skills = [
-  { name: "ServiceNow", icon: "https://upload.wikimedia.org/wikipedia/commons/5/57/ServiceNow_logo.svg" },
-  { name: "GenAI", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" },
-  { name: "Agentic AI", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" },
-  { name: "Now Assist Skills", icon: "https://upload.wikimedia.org/wikipedia/commons/5/57/ServiceNow_logo.svg" },
-  { name: "AI Agent Studio", icon: "https://upload.wikimedia.org/wikipedia/commons/5/57/ServiceNow_logo.svg" },
-  { name: "Moveworks", icon: "https://upload.wikimedia.org/wikipedia/commons/5/57/ServiceNow_logo.svg" },
-  { name: "Glide APIs", icon: "https://upload.wikimedia.org/wikipedia/commons/5/57/ServiceNow_logo.svg" },
-  { name: "Flow Designer", icon: "https://upload.wikimedia.org/wikipedia/commons/5/57/ServiceNow_logo.svg" },
-  { name: "UI Builder", icon: "https://upload.wikimedia.org/wikipedia/commons/5/57/ServiceNow_logo.svg" },
-  { name: "ITIL", icon: "https://upload.wikimedia.org/wikipedia/commons/5/57/ServiceNow_logo.svg" },
-  { name: "JavaScript", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" },
-  { name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" },
-  { name: "React", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" },
-  { name: "Next.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original-wordmark.svg" },
-  { name: "Node.js", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" },
-  { name: "GraphQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/graphql/graphql-plain.svg" },
-  { name: "Firebase", icon: "https://cdn4.iconfinder.com/data/icons/google-i-o-2016/512/google_firebase-2-512.png" },
-  { name: "GCP", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/googlecloud/googlecloud-original.svg" },
-  { name: "AWS", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
-  { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original-wordmark.svg" },
-  { name: "PostgreSQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original-wordmark.svg" },
-  { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" },
-  { name: "HTML", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" },
-  { name: "CSS", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" },
-  { name: "Tailwind", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" },
-  { name: "Redux", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redux/redux-original.svg" },
-  { name: "Git", icon: "https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" },
-  { name: "Postman", icon: "https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" },
+  // Languages
+  { name: "Python", icon: icon("python/python-original") },
+  { name: "Java", icon: icon("java/java-original") },
+  { name: "C", icon: icon("c/c-original") },
+  { name: "C++", icon: icon("cplusplus/cplusplus-original") },
+  { name: "TypeScript", icon: icon("typescript/typescript-original") },
+  { name: "JavaScript", icon: icon("javascript/javascript-original") },
+  { name: "Swift", icon: icon("swift/swift-original") },
+  { name: "R", icon: icon("r/r-original") },
+  { name: "HTML", icon: icon("html5/html5-original") },
+  { name: "CSS", icon: icon("css3/css3-original") },
+  // Frameworks
+  { name: "React", icon: icon("react/react-original") },
+  { name: "Next.js", icon: icon("nextjs/nextjs-original") },
+  { name: "Node.js", icon: icon("nodejs/nodejs-original") },
+  { name: "Express", icon: icon("express/express-original") },
+  { name: "Spring Boot", icon: icon("spring/spring-original") },
+  { name: "Flask", icon: icon("flask/flask-original") },
+  { name: "FastAPI", icon: icon("fastapi/fastapi-original") },
+  { name: "PyTorch", icon: icon("pytorch/pytorch-original") },
+  { name: "Pandas", icon: icon("pandas/pandas-original") },
+  { name: "OpenCV", icon: icon("opencv/opencv-original") },
+  // Infra & data
+  { name: "Git", icon: icon("git/git-original") },
+  { name: "Docker", icon: icon("docker/docker-original") },
+  { name: "AWS", icon: icon("amazonwebservices/amazonwebservices-original-wordmark") },
+  { name: "Azure", icon: icon("azure/azure-original") },
+  { name: "GCP", icon: icon("googlecloud/googlecloud-original") },
+  { name: "PostgreSQL", icon: icon("postgresql/postgresql-original") },
+  { name: "MongoDB", icon: icon("mongodb/mongodb-original") },
+  { name: "Redis", icon: icon("redis/redis-original") },
+  { name: "Kafka", icon: icon("apachekafka/apachekafka-original") },
+  { name: "Spark", icon: icon("apachespark/apachespark-original") },
 ];
 
 export default function About() {
@@ -65,35 +74,42 @@ export default function About() {
                   }`}
               >
                 <p className="text-[var(--text-secondary)] mb-3 sm:mb-4 leading-relaxed text-sm sm:text-base">
-                  I'm an{" "}
+                  I'm a senior at the{" "}
                   <strong className="text-[var(--accent-primary)]">
-                    Associate Consultant at Infosys, Mumbai
+                    University of Wisconsin–Madison
                   </strong>{" "}
-                  with 4+ years of experience in full-stack development, cloud
-                  technologies, and AI-driven automation. I deliver enterprise-grade
-                  ServiceNow solutions across GenAI, Agentic AI, Now Assist
-                  Skills, and AI Agent Studio.
+                  studying Computer Science and Data Science, graduating in
+                  December 2026. I'm drawn to the systems side of software —
+                  backend services, distributed data, and the machine learning
+                  that runs on top of them.
                 </p>
                 <p className="text-[var(--text-secondary)] mb-3 sm:mb-4 leading-relaxed text-sm sm:text-base">
-                  My hands-on work spans Glide APIs, Flow Designer, UI Builder,
-                  Workspace, business rules, client scripts, UI policies,
-                  Playbooks, Service Portal, ATF test suites, REST/SOAP
-                  integrations, Integration Hub, and Moveworks — all aligned
-                  with ITIL best practices. I collaborate closely with
-                  stakeholders to design and implement high-impact, AI-powered
-                  platform capabilities aligned with business goals.
+                  This past summer I interned at{" "}
+                  <strong className="text-[var(--text-primary)]">Medline</strong>,
+                  building internal tooling for warehouse logistics: a Next.js
+                  filter sidebar that cut event search time by 40%, a Dead Letter
+                  Queue page that reduced failed print job diagnosis by 30%, and a
+                  unified dashboard pulling four Azure data sources behind
+                  passwordless authentication.
                 </p>
                 <p className="text-[var(--text-secondary)] mb-3 sm:mb-4 leading-relaxed text-sm sm:text-base">
-                  Earlier in my career, I led the development of a
-                  production-grade restaurant discovery platform using Next.js,
-                  Node.js, Firebase, and GCP, and built a Learning Management
-                  System portal focused on accessibility and real-time
-                  analytics.
+                  Alongside school I contract with the{" "}
+                  <strong className="text-[var(--text-primary)]">
+                    Handshake AI Fellowship
+                  </strong>
+                  , writing software engineering benchmarks against large open
+                  source projects — diagnosing real bugs, authoring golden
+                  solutions, and packaging fail-to-pass test suites in Docker so
+                  frontier models can be evaluated on genuine engineering work.
                 </p>
                 <p className="text-[var(--text-secondary)] mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
-                  I thrive in collaborative environments,
-                  always learning new technologies and staying current with the
-                  latest in AI, cloud, and web development.
+                  I also research assistive technology at{" "}
+                  <strong className="text-[var(--text-primary)]">madAbility</strong>,
+                  UW–Madison's accessibility lab, where I ran a gaze-tracking study
+                  with over 100 participants and improved a multimodal attention
+                  model's accuracy by 25% to help personalize interfaces for
+                  low-vision users. I'm AWS Cloud Practitioner and OCI AI
+                  Foundations certified.
                 </p>
               </div>
               <button

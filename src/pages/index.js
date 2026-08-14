@@ -14,17 +14,18 @@ export default function Home() {
     "@type": "Person",
     name: "Abhijay Movva",
     alternateName: "Abhijay",
-    url: "https://agrawalpratham.in",
-    jobTitle: "Associate Consultant",
-    worksFor: {
-      "@type": "Organization",
-      name: "Infosys",
-      url: "https://www.infosys.com",
+    url: "https://abhijaymovva.vercel.app",
+    jobTitle: "Software Engineer",
+    alumniOf: {
+      "@type": "CollegeOrUniversity",
+      name: "University of Wisconsin–Madison",
+      url: "https://www.wisc.edu",
     },
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Mumbai",
-      addressCountry: "India",
+      addressLocality: "Madison",
+      addressRegion: "WI",
+      addressCountry: "US",
     },
     sameAs: [
       "https://www.linkedin.com/in/abhijaymovva/",
@@ -33,25 +34,31 @@ export default function Home() {
       ...(BLOG_URL.startsWith("http") ? [BLOG_URL] : []),
     ],
     description:
-      "Associate Consultant with 4+ years of experience in full-stack development, cloud technologies, and AI-driven automation. Currently delivering enterprise-grade ServiceNow solutions across GenAI, Agentic AI, Now Assist Skills, and AI Agent Studio, architecting scalable intelligent workflows.",
+      "Computer Science and Data Science senior at UW–Madison graduating December 2026. Software engineering intern at Medline, SWE benchmark contractor for the Handshake AI Fellowship, and undergraduate researcher at the madAbility accessibility lab. Focused on backend, distributed systems, and machine learning.",
     knowsAbout: [
-      "ServiceNow",
-      "GenAI",
-      "Agentic AI",
-      "Now Assist Skills",
-      "AI Agent Studio",
-      "Moveworks",
-      "Glide APIs",
-      "Flow Designer",
-      "UI Builder",
-      "ITIL",
+      "Backend Engineering",
+      "Distributed Systems",
+      "Machine Learning",
+      "Deep Learning",
+      "Computer Vision",
+      "Cloud Infrastructure",
+      "Python",
+      "Java",
+      "C",
+      "C++",
+      "TypeScript",
+      "React",
       "Next.js",
-      "ReactJS",
-      "Node.js",
-      "Firebase",
-      "GCP",
+      "FastAPI",
+      "Spring Boot",
+      "PyTorch",
+      "Docker",
       "AWS",
-      "Full Stack Development",
+      "Azure",
+      "PostgreSQL",
+      "MongoDB",
+      "Kafka",
+      "Spark",
     ],
   };
 
@@ -59,7 +66,7 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "Abhijay Movva | Portfolio",
-    url: "https://agrawalpratham.in",
+    url: "https://abhijaymovva.vercel.app",
     author: {
       "@type": "Person",
       name: "Abhijay Movva",
@@ -70,14 +77,14 @@ export default function Home() {
     <div>
       <Head>
         {/* Primary Meta Tags */}
-        <title>Abhijay Movva | Associate Consultant at Infosys | ServiceNow & AI Engineer</title>
+        <title>Abhijay Movva | Software Engineer | CS + Data Science @ UW–Madison</title>
         <meta
           name="description"
-          content="Associate Consultant at Infosys, Mumbai with 4+ years of experience in full-stack development, cloud technologies, and AI-driven automation. Delivering enterprise-grade ServiceNow solutions across GenAI, Agentic AI, Now Assist Skills, and AI Agent Studio."
+          content="CS + Data Science senior at UW–Madison graduating Dec 2026. Software engineering intern at Medline, SWE benchmark contractor for the Handshake AI Fellowship, and undergraduate researcher at the madAbility accessibility lab. Backend, distributed systems, and machine learning."
         />
         <meta
           name="keywords"
-          content="Abhijay Movva, Associate Consultant, Infosys, Infosys Mumbai, ServiceNow, GenAI, Agentic AI, Now Assist Skills, AI Agent Studio, Moveworks, Glide APIs, Flow Designer, UI Builder, ITIL, Full Stack Web Developer, Next.js, ReactJS, Node.js, Firebase, GCP, AWS, Cloud Solutions"
+          content="Abhijay Movva, Software Engineer, UW-Madison, University of Wisconsin Madison, Computer Science, Data Science, New Grad 2026, Backend Engineer, Distributed Systems, Machine Learning, Medline, Handshake AI Fellowship, madAbility, Python, Java, TypeScript, React, Next.js, FastAPI, PyTorch, Docker, AWS, Azure, Kafka, Spark"
         />
         <meta name="author" content="Abhijay Movva" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -92,7 +99,7 @@ export default function Home() {
         <meta name="theme-color" content="#12151A" />
 
         {/* Canonical Link */}
-        <link rel="canonical" href="https://agrawalpratham.in/" />
+        <link rel="canonical" href="https://abhijaymovva.vercel.app/" />
 
         {/* OpenGraph / Facebook Meta Tags */}
         <meta property="og:site_name" content="Abhijay Movva Portfolio" />
@@ -101,21 +108,21 @@ export default function Home() {
         <meta property="profile:first_name" content="Abhijay" />
         <meta property="profile:last_name" content="Movva" />
         <meta property="profile:username" content="amovva11" />
-        <meta property="og:title" content="Abhijay Movva | Associate Consultant at Infosys" />
+        <meta property="og:title" content="Abhijay Movva | Software Engineer & CS + Data Science @ UW–Madison" />
         <meta
           property="og:description"
-          content="Associate Consultant at Infosys, Mumbai with 4+ years of experience in full-stack development, cloud technologies, and AI-driven automation. Delivering enterprise-grade ServiceNow solutions across GenAI, Agentic AI, Now Assist Skills, and AI Agent Studio."
+          content="CS + Data Science senior at UW–Madison graduating Dec 2026. Software engineering intern at Medline, SWE benchmark contractor for the Handshake AI Fellowship, and undergraduate researcher at the madAbility accessibility lab. Backend, distributed systems, and machine learning."
         />
         {/* TODO: add og:image (1200x630) once a share card exists, and switch
             twitter:card back to "summary_large_image" */}
-        <meta property="og:url" content="https://agrawalpratham.in/" />
+        <meta property="og:url" content="https://abhijaymovva.vercel.app/" />
 
         {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="Abhijay Movva | Associate Consultant at Infosys" />
+        <meta name="twitter:title" content="Abhijay Movva | Software Engineer & CS + Data Science @ UW–Madison" />
         <meta
           name="twitter:description"
-          content="Associate Consultant at Infosys, Mumbai with 4+ years of experience in full-stack development, cloud technologies, and AI-driven automation. Delivering enterprise-grade ServiceNow solutions across GenAI, Agentic AI, Now Assist Skills, and AI Agent Studio."
+          content="CS + Data Science senior at UW–Madison graduating Dec 2026. Software engineering intern at Medline, SWE benchmark contractor for the Handshake AI Fellowship, and undergraduate researcher at the madAbility accessibility lab. Backend, distributed systems, and machine learning."
         />
 
         {/* JSON-LD Structured Data */}

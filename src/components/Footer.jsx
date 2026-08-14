@@ -31,10 +31,9 @@ export default function Footer() {
               Abhijay Movva
             </h2>
             <p className="text-[var(--text-secondary)] text-sm sm:text-base leading-relaxed max-w-md">
-              Associate Consultant at Infosys, Mumbai.
+              CS + Data Science at UW–Madison, graduating December 2026.
               <br />
-              Delivering enterprise-grade ServiceNow,
-              GenAI, Agentic AI, and full-stack cloud solutions.
+              Building backend, distributed systems, and machine learning.
             </p>
           </div>
 
