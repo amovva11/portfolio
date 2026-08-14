@@ -1,11 +1,11 @@
 {
-    "name": "Abhijay Movva | Full Stack Web Developer",
-    "short_name": "Abhijay's Portfolio",
+    "name": "Abhijay Movva | Software Engineer",
+    "short_name": "Abhijay Movva",
     "start_url": "/",
     "orientation": "portrait",
     "scope": "/",
     "offline_enabled": true,
-    "description": "Portfolio website of Abhijay Movva, Full Stack Web Developer",
+    "description": "Portfolio of Abhijay Movva — CS + Data Science at UW-Madison, building backend, distributed systems, and machine learning.",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -18,7 +18,7 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#d3f4f7",
-    "background_color": "#d3f4f7",
+    "theme_color": "#12151A",
+    "background_color": "#12151A",
     "display": "standalone"
 }

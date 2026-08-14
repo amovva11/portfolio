@@ -41,7 +41,7 @@ export default function Hero() {
             <div className="flex flex-col xs:flex-row flex-wrap gap-3 justify-center">
               <Link
                 onClick={() => {
-                  sendGAEvent({ event: "buttonClicked", value: "Resume" });
+                  sendGAEvent({ event: "button_click", button_name: "Resume" });
                 }}
                 href={RESUME_URL}
                 target="_blank"

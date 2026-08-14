@@ -1,40 +1,85 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# abhijaymovva.vercel.app
 
-## Getting Started
+Personal portfolio for Abhijay Movva — CS + Data Science at UW–Madison.
 
-First, run the development server:
+Live at **[abhijaymovva.vercel.app](https://abhijaymovva.vercel.app)**.
+
+## Stack
+
+Next.js 14 (Pages Router), React 18, Tailwind CSS 3, deployed on Vercel.
+No TypeScript, no database, no API routes — it's a single static page.
+
+## Running locally
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```bash
+npm run build    # production build + sitemap generation
+npm start        # serve the production build
+```
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Layout
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+```
+src/
+  pages/
+    index.js        the only page — also holds all SEO meta + JSON-LD schema
+    _app.js         global wrapper, analytics
+    _document.js    inline script that applies the saved theme before first paint
+  components/
+    Header.jsx      fixed nav, theme toggle, mobile menu
+    Hero.jsx        landing section
+    About.jsx       bio + skills grid
+    WorkExperience.jsx
+    Projects.jsx
+    Footer.jsx      social links
+    ScrollTop.jsx
+    Cookie/
+  data/
+    site.js         shared links (resume, blog)
+  styles/
+    globals.css     CSS custom properties for both themes
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Editing content
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Most content lives in arrays at the top of its component, so adding an entry
+means adding an object:
 
-## Learn More
+| What | Where |
+|---|---|
+| Jobs | `experiences` in `WorkExperience.jsx` |
+| Projects | `projects` in `Projects.jsx` |
+| Skills | `skills` in `About.jsx` |
+| Social links | `socialLinks` in `Footer.jsx` |
+| Nav items | `navLinks` in `Header.jsx` |
+| Resume / blog URLs | `src/data/site.js` |
 
-To learn more about Next.js, take a look at the following resources:
+Projects take an optional `image` — cards without one render full width, so
+you can add a screenshot later without touching the layout.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Theming
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Colors are CSS custom properties defined twice in `globals.css`: once on
+`:root` for dark (the default) and once under `html.light` for light. Components
+reference them as `var(--accent-primary)` and never hardcode a hex value, so
+changing a color means editing those two blocks only.
 
-## Deploy on Vercel
+The toggle in the header uses the View Transitions API for a circular reveal,
+falling back to an instant swap where that isn't supported. The choice persists
+in `localStorage` and is re-applied by a blocking script in `_document.js` so
+there's no flash of the wrong theme on load.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deploying
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Pushing to `main` triggers a Vercel deploy. The site URL is set in
+`next-sitemap.config.js`; `robots.txt` and the sitemaps are generated from it
+by the `postbuild` hook, so change it there rather than editing `public/`.
+
+## Analytics
+
+Vercel Web Analytics is enabled and needs no configuration. Google Analytics is
+wired up but inactive — set `GA_MEASUREMENT_ID` in `_app.js` to turn it on.

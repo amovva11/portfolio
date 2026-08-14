@@ -162,8 +162,8 @@ export default function Projects() {
                           key={link.label}
                           onClick={() => {
                             sendGAEvent({
-                              event: "buttonClicked",
-                              value: `${link.label} - ${project.title}`,
+                              event: "button_click",
+                              button_name: `${link.label} — ${project.title}`,
                             });
                           }}
                           href={link.url}

@@ -3,10 +3,9 @@ import "@/styles/globals.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Analytics } from "@vercel/analytics/react";
 
-// TODO: create a GA4 property at analytics.google.com once the site is live on
-// your own domain, then paste the "G-XXXXXXXXXX" measurement ID here.
-// Until this is set, GA is skipped entirely and sendGAEvent() calls no-op.
-const GA_MEASUREMENT_ID = "";
+// GA4 measurement ID (Admin → Data Streams). Set to "" to disable GA entirely;
+// the conditional render below means no Google script loads when it is empty.
+const GA_MEASUREMENT_ID = "G-3GXNXDN2ZY";
 
 export default function App({ Component, pageProps }) {
   return (
