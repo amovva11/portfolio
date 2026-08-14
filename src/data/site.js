@@ -6,3 +6,8 @@
 // this ID stays valid — re-uploading creates a new ID and breaks this link.
 export const RESUME_URL =
   "https://drive.google.com/file/d/17izBPTHaeFmY3Jgr9DKl-hFaC1Yzl8gw/view";
+
+// TODO: replace with your own blog once it exists (Hashnode, Substack, a
+// /blog route here — anything). Left as "#" so the nav item stays visible
+// without sending anyone to someone else's site.
+export const BLOG_URL = "#";

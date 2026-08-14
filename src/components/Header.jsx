@@ -1,5 +1,5 @@
 "use client";
-import { RESUME_URL } from "@/data/site";
+import { BLOG_URL, RESUME_URL } from "@/data/site";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -9,7 +9,7 @@ const navLinks = [
   { href: "#about", label: "About" },
   { href: "#work-experience", label: "Experience" },
   { href: "#projects", label: "Projects" },
-  { href: "https://blogs.agrawalpratham.in/", label: "Blogs" },
+  { href: BLOG_URL, label: "Blogs" },
 ];
 
 export default function Header() {
@@ -97,7 +97,7 @@ export default function Header() {
           <div className="rounded-xl overflow-hidden ring-1 ring-[var(--border-color)] group-hover:ring-[var(--accent-primary)] transition-all duration-300">
             <Image
               src="/assets/png/personal_logo.png"
-              alt="Pratham"
+              alt="Abhijay"
               width={40}
               height={36}
             />

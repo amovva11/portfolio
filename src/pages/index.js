@@ -14,7 +14,6 @@ export default function Home() {
     name: "Abhijay Movva",
     alternateName: "Abhijay",
     url: "https://agrawalpratham.in",
-    image: "https://agrawalpratham.in/assets/png/og_img.png",
     jobTitle: "Associate Consultant",
     worksFor: {
       "@type": "Organization",
@@ -108,11 +107,12 @@ export default function Home() {
           property="og:description"
           content="Associate Consultant at Infosys, Mumbai with 4+ years of experience in full-stack development, cloud technologies, and AI-driven automation. Delivering enterprise-grade ServiceNow solutions across GenAI, Agentic AI, Now Assist Skills, and AI Agent Studio."
         />
-        <meta property="og:image" content="https://agrawalpratham.in/assets/png/og_img.png" />
+        {/* TODO: add og:image (1200x630) once a share card exists, and switch
+            twitter:card back to "summary_large_image" */}
         <meta property="og:url" content="https://agrawalpratham.in/" />
 
         {/* Twitter Card Meta Tags */}
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@agrawal_2002" />
         <meta name="twitter:creator" content="@agrawal_2002" />
         <meta name="twitter:title" content="Abhijay Movva | Associate Consultant at Infosys" />
@@ -120,7 +120,6 @@ export default function Home() {
           name="twitter:description"
           content="Associate Consultant at Infosys, Mumbai with 4+ years of experience in full-stack development, cloud technologies, and AI-driven automation. Delivering enterprise-grade ServiceNow solutions across GenAI, Agentic AI, Now Assist Skills, and AI Agent Studio."
         />
-        <meta name="twitter:image" content="https://agrawalpratham.in/assets/png/og_img.png" />
 
         {/* JSON-LD Structured Data */}
         <script
