@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Projects from "@/components/Projects";
 import WorkExperience from "@/components/WorkExperience";
+import { BLOG_URL } from "@/data/site";
 import Head from "next/head";
 
 export default function Home() {
@@ -26,12 +27,10 @@ export default function Home() {
       addressCountry: "India",
     },
     sameAs: [
-      "https://www.linkedin.com/in/agrawalpratham/",
-      "https://github.com/agrawal-pratham",
-      "https://www.instagram.com/agrawal___pratham/",
-      "https://twitter.com/agrawal_2002",
-      "http://blogs.agrawalpratham.in/",
-      "https://solutions.agrawalpratham.in/",
+      "https://www.linkedin.com/in/abhijaymovva/",
+      "https://github.com/amovva11",
+      // Included only once BLOG_URL is a real URL — "#" is not valid here.
+      ...(BLOG_URL.startsWith("http") ? [BLOG_URL] : []),
     ],
     description:
       "Associate Consultant with 4+ years of experience in full-stack development, cloud technologies, and AI-driven automation. Currently delivering enterprise-grade ServiceNow solutions across GenAI, Agentic AI, Now Assist Skills, and AI Agent Studio, architecting scalable intelligent workflows.",
@@ -99,9 +98,9 @@ export default function Home() {
         <meta property="og:site_name" content="Abhijay Movva Portfolio" />
         <meta property="og:locale" content="en_US" />
         <meta property="og:type" content="profile" />
-        <meta property="profile:first_name" content="Pratham" />
-        <meta property="profile:last_name" content="Agrawal" />
-        <meta property="profile:username" content="agrawalpratham" />
+        <meta property="profile:first_name" content="Abhijay" />
+        <meta property="profile:last_name" content="Movva" />
+        <meta property="profile:username" content="amovva11" />
         <meta property="og:title" content="Abhijay Movva | Associate Consultant at Infosys" />
         <meta
           property="og:description"
@@ -113,8 +112,6 @@ export default function Home() {
 
         {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="@agrawal_2002" />
-        <meta name="twitter:creator" content="@agrawal_2002" />
         <meta name="twitter:title" content="Abhijay Movva | Associate Consultant at Infosys" />
         <meta
           name="twitter:description"
