@@ -39,6 +39,42 @@ const experiences = [
     ],
     tech: ["Python", "PyTorch", "OpenCV", "Computer Vision", "Research"],
   },
+  {
+    role: "Lead Full Stack Software Developer",
+    company: "SAlliance.us",
+    location: "Remote",
+    period: "May 2025 – Jun 2025",
+    highlights: [
+      "Led a 4-person team building an end-to-end encrypted real-time chat platform with Node.js, MongoDB, and WebSockets, supporting anonymous messaging, media sharing, and dynamic pricing.",
+      "Integrated LinkedIn OAuth, the Stripe API, and JWT for seamless authentication and encrypted, time-bound paid conversations.",
+      "Streamlined the development lifecycle with Agile practices and CI/CD pipelines under mentorship from Amazon, Google, and Microsoft engineers.",
+    ],
+    tech: ["Node.js", "MongoDB", "WebSockets", "Stripe", "OAuth", "JWT", "CI/CD"],
+  },
+  {
+    role: "Software Engineering Intern",
+    company: "Ebes",
+    location: "Fremont, CA",
+    period: "Jun 2024 – Aug 2024",
+    highlights: [
+      "Improved site functionality and design through targeted updates, reducing average page load time by 25% and lifting user engagement by 10%.",
+      "Built a staging environment on AWS EC2 for testing and deployment, cutting deployment time by 30% and production support inquiries by 15%.",
+      "Introduced version control by migrating the codebase to Git, enabling real team collaboration.",
+    ],
+    tech: ["WordPress", "AWS EC2", "Git"],
+  },
+  {
+    role: "Software Engineering Externship — Mobile Development",
+    company: "Cisco",
+    location: "San Jose, CA",
+    period: "Jun 2022 – Aug 2022",
+    highlights: [
+      "Built “Freshoo,” a React Native farmers' market app, with a team of five developers.",
+      "Enabled users to browse 30+ vendors and their produce, giving vendors a direct channel to advertise to local consumers.",
+      "Used Firebase to store and surface 100+ farmers markets across several US cities, with Google Maps API directions to each.",
+    ],
+    tech: ["React Native", "JavaScript", "Firebase", "Google Maps API"],
+  },
 ];
 
 export default function WorkExperience() {

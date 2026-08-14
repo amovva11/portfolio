@@ -30,6 +30,66 @@ const projects = [
       { label: "View Source", url: "https://github.com/KevinJ-30/AIATL_Project", primary: true },
     ],
   },
+  {
+    id: "miniwfs",
+    title: "Mini WFS — Userspace Filesystem",
+    period: "Dec 2025",
+    description:
+      "A persistent Unix-like block-based filesystem written in C, using inodes, allocation bitmaps, and both direct and indirect block addressing so it interoperates with standard Unix tools on a raw disk image. Full VFS integration through FUSE covers file, directory, and metadata operations, with a 100% automated test pass rate, plus POSIX-compliant timestamps and extended attributes for per-file custom metadata.",
+    technologies: ["C", "FUSE", "Systems Programming", "POSIX"],
+    links: [
+      { label: "View Source", url: "https://github.com/amovva11/miniwfs", primary: true },
+    ],
+  },
+  {
+    id: "stockpredictor",
+    title: "Stock Price Predictor",
+    period: "Jul 2025",
+    description:
+      "An LSTM time-series model in PyTorch that forecasts 10-day directional stock movements from sequential market data. Trained on five years of historical equity data and evaluated across 15 technology stocks, reaching 84.9% average accuracy and an AUC of 0.9187, with an end-to-end ingestion, training, and validation pipeline built on scikit-learn.",
+    technologies: ["Python", "PyTorch", "scikit-learn", "yfinance", "LSTM"],
+    links: [
+      { label: "View Source", url: "https://github.com/amovva11/StockPredictor", primary: true },
+    ],
+  },
+  {
+    id: "homely",
+    title: "Homely — Property Management Platform",
+    period: "May 2025 – Present",
+    description:
+      "A full-stack property management tool where owners track rent, documents, and maintenance while tenants manage their side of the relationship. Built with React Native, Node.js, and TypeScript, with Google OAuth alongside custom authentication flows, and a RESTful API over PostgreSQL with optimized queries for high-volume traffic.",
+    technologies: ["React Native", "Node.js", "TypeScript", "PostgreSQL", "OAuth"],
+    links: [
+      { label: "View Source", url: "https://github.com/amovva11/PMAPP", primary: true },
+    ],
+  },
+  {
+    id: "campus-navigator",
+    title: "Campus Navigator",
+    period: "Apr 2024",
+    description:
+      "A campus pathfinding application built around an enhanced Dijkstra's algorithm, improving navigation performance by 30%. Backed by a custom HashTable giving O(1) edge storage and lookup, which improved overall efficiency by 40%.",
+    technologies: ["Java", "JUnit", "Algorithms", "Data Structures"],
+    links: [],
+  },
+  {
+    id: "isongify",
+    title: "iSongify",
+    period: "Dec 2023",
+    description:
+      "A backend system that analyzes 10,000+ songs by liveness rating and loudness, with filtering for new releases and most-listened tracks. Written in Java with JUnit coverage across the full test suite.",
+    technologies: ["Java", "JUnit", "Data Processing", "API Development"],
+    links: [],
+  },
+  {
+    id: "text-summarizer",
+    title: "Text Summarizer",
+    period: "Jul – Aug 2021",
+    description:
+      "An NLP summarizer that condenses long articles by 75% while preserving roughly 90% of key information. Text preprocessing — punctuation stripping, lowercasing, structural simplification — cut training time by 30%, and LSTM networks addressed the vanishing gradient problem inherent to plain RNNs.",
+    technologies: ["Python", "NLP", "LSTM", "Data Preprocessing"],
+    links: [],
+  },
 ];
 
 export default function Projects() {
